@@ -58,15 +58,15 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\ponomarevmi\PycharmProjects\PythonProject2\stepic_final_project\.venv'
+set -gx VIRTUAL_ENV 'C:\Users\mr\PycharmProjects\sel\stepic_final_project\.venv1'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3
-   set -gx _OLD_VIRTUAL_PATH (_bashify_path $PATH)
+    set -gx _OLD_VIRTUAL_PATH (_bashify_path $PATH)
 else
     set -gx _OLD_VIRTUAL_PATH $PATH
 end
-set -gx PATH "$VIRTUAL_ENV"'/Scripts' $PATH
+set -gx PATH "$VIRTUAL_ENV"'/'Scripts $PATH
 
 # Prompt override provided?
 # If not, just use the environment name.
