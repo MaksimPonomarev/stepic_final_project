@@ -1,1 +1,11 @@
-/.venv1/
+# venv
+.venv/
+.venv1/
+venv/
+
+# python cache
+__pycache__/
+*.pyc
+
+# PyCharm / IDE
+.idea/
