@@ -13,4 +13,4 @@ def test_guest_can_add_product_to_basket(browser):
     item_page = ItemPage(browser, browser.current_url)
     item_page.should_be_item_page()
     item_page.add_item_in_basket()
-    BasePage.solve_quiz_and_get_code(se)
+    item_page.solve_quiz_and_get_code()
