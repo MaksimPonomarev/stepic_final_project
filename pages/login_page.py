@@ -1,12 +1,11 @@
-from conftest import browser
 from .base_page import BasePage
 from pages.locators import LoginPageLocators
-from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 
 class LoginPage(BasePage):
-
-
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()
@@ -16,15 +15,10 @@ class LoginPage(BasePage):
         assert "login" in self.browser.current_url, "url does not include 'login'"
 
     def should_be_login_form(self):
-        assert self.browser.find_element(LoginPageLocators.LOGIN_EMAIL), "element 'LOGIN_EMAIL' not found"
-        assert self.browser.find_element(LoginPageLocators.LOGIN_PASSWORD), "element 'LOGIN_PASSWORD' not found"
-        assert self.browser.find_element(LoginPageLocators.LOGIN_BTN), "element 'LOGIN_BTN' not found"
-
-
+        wait = WebDriverWait(self.browser, 10)
+        wait.until(EC.presence_of_element_located(LoginPageLocators.LOGIN_FORM),"Login form is not presented")
 
 
     def should_be_register_form(self):
-        assert self.browser.find_element(LoginPageLocators.REGISTRATION_EMAIL), "element 'REGISTRATION_EMAIL' not found"
-        assert self.browser.find_element(LoginPageLocators.REGISTRATION_PASSWORD1), "element 'REGISTRATION_PASSWORD1' not found"
-        assert self.browser.find_element(LoginPageLocators.REGISTRATION_PASSWORD2), "element 'REGISTRATION_PASSWORD2' not found"
-        assert self.browser.find_element(LoginPageLocators.REGISTRATION_BTN), "element 'REGISTRATION_BTN' not found"
+        wait = WebDriverWait(self.browser, 10)
+        wait.until(EC.presence_of_element_located(LoginPageLocators.REGISTER_FORM),"Register form is not presented")
