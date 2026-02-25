@@ -22,3 +22,6 @@ class LoginPageLocators:
 
 class ItemPageLocators:
     BTN_ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    MESSAGE_OF_SUCCESS_ADD_SELECTED_BOOK = (By.CSS_SELECTOR, ".alertinner strong")
+    BOOK_NAME = (By.CSS_SELECTOR, ".col-sm-6.product_main h1")
+    BOOK_COST = (By.CSS_SELECTOR, "p.price_color")
