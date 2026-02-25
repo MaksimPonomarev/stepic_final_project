@@ -27,3 +27,4 @@ def test_guest_can_add_product_to_basket(browser, link):
     item_page.add_item_in_basket()
     item_page.solve_quiz_and_get_code()
     item_page.check_success_add()
+    time.sleep(100)
