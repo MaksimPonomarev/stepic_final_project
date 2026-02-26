@@ -2,7 +2,7 @@ from .base_page import BasePage
 from pages.locators import LoginPageLocators
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from pages.locators import ItemPageLocators
+
 
 
 class LoginPage(BasePage):
@@ -23,10 +23,3 @@ class LoginPage(BasePage):
         wait = WebDriverWait(self.browser, 10)
         wait.until(EC.presence_of_element_located(LoginPageLocators.REGISTER_FORM),"Register form is not presented")
 
-    def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ItemPageLocators.MESSAGE_OF_SUCCESS_ADD_SELECTED_BOOK), \
-            "Success message is presented, but should not be"
-
-    def should_disappear(self):
-        assert self.is_disappeared(*ItemPageLocators.MESSAGE_OF_SUCCESS_ADD_SELECTED_BOOK), \
-            "The success message did not disappear."
