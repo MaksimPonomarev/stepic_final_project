@@ -7,7 +7,7 @@ class BasePageLocators:
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
+    VIEW_BASKET_BTN = (By.CSS_SELECTOR, ".btn-group .btn.btn-default[href]")
 
 class LoginPageLocators:
     LOGIN_EMAIL = (By.CSS_SELECTOR, "#id_login-username[required]")
@@ -32,4 +32,7 @@ class ProductPageLocators:
     BOOK_COST = (By.CSS_SELECTOR, "p.price_color")
 
 
-
+class BasketPageLocators:
+    PROCEEED_TO_CKECKOUT = (By.CSS_SELECTOR, ".btn-primary.btn-block")
+    BASKET_SUMMARY = (By.CSS_SELECTOR, ".basket_summary")
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner")
