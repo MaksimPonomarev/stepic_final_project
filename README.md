@@ -1,1 +1,1 @@
-123
+This is a project I created while studying test automation on a course from STEPIC.
