@@ -7,8 +7,9 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from pages.locators import BasePageLocators
 from pages.locators import MainPageLocators
-class BasePage:
 
+
+class BasePage:
     def __init__(self, browser, url, timeout = 10):
         self.browser = browser
         self.url = url
@@ -68,3 +69,7 @@ class BasePage:
     def go_to_basket(self):
         basket_btn = self.browser.find_element(*MainPageLocators.VIEW_BASKET_BTN)
         basket_btn.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
